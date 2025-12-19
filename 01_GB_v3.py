@@ -79,7 +79,10 @@ for idx, s in enumerate(stages):
     visual_z = 0.05 * ((cur_x - TARGET_X)**2 + (cur_y - TARGET_Y)**2) + MIN_EXPECTED_LOSS
     
     csv_data.append({
-        'Stage': s, 'Structure_X': cur_x, 'Control_Y': cur_y, 'Regularization_Z': visual_z
+        'Stage': s, 
+        'Learning Rate (Hyperparameter, X)': cur_x, 
+        'Max Depth (Hyperparameter, Y)': cur_y, 
+        'Total Loss | Cost (MSE)': visual_z
     })
 
     # --- 캔버스 생성 ---
@@ -186,9 +189,9 @@ for idx, s in enumerate(stages):
                             edgecolor='gray', linewidth=0.5, rstride=1, cstride=1)
     
     # Trajectory
-    hist_x = [d['Structure_X'] for d in csv_data]
-    hist_y = [d['Control_Y'] for d in csv_data]
-    hist_z = [d['Regularization_Z'] for d in csv_data]
+    hist_x = [d['Learning Rate (Hyperparameter, X)'] for d in csv_data]
+    hist_y = [d['Max Depth (Hyperparameter, Y)'] for d in csv_data]
+    hist_z = [d['Total Loss | Cost (MSE)'] for d in csv_data]
     
     ax4.plot(hist_x, hist_y, hist_z, color='black', linewidth=1.5, linestyle='--')
     ax4.scatter(cur_x, cur_y, visual_z, color='red', s=250, marker='*', zorder=10, edgecolors='white')
@@ -204,10 +207,11 @@ for idx, s in enumerate(stages):
                color='red', fontsize=13, fontweight='bold',
                ha='right', va='bottom', bbox=bbox_props)
 
-    ax4.set_title(f'[Q4] 3D Optimization Process', fontsize=FS_TITLE, fontweight=FW)
-    ax4.set_xlabel('Structure (X)', fontsize=FS_LABEL, fontweight=FW)
-    ax4.set_ylabel('Control (Y)', fontsize=FS_LABEL, fontweight=FW)
-    ax4.set_zlabel('Regularization (Z)', fontsize=FS_LABEL, fontweight=FW)
+    ax4.set_title(f'[Q4] Loss Landscape Optimization', fontsize=FS_TITLE, fontweight=FW)
+    ax4.set_xlabel('Learning Rate (Hyperparameter, X)', fontsize=FS_LABEL, fontweight=FW)
+    ax4.set_ylabel('Max Depth (Hyperparameter, Y)', fontsize=FS_LABEL, fontweight=FW)
+    ax4.set_zlabel('Total Loss | Cost (MSE)', fontsize=FS_LABEL, fontweight=FW)
+
 
     # [수정 5] Z축 범위 설정 (0 ~ 곡면 최대 높이 * 1.2)
     ax4.set_zlim(0, Z_surf.max() * 1.1)
