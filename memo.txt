@@ -1,0 +1,25 @@
+1. cmd에서 미리 설치하세요.
+
+pip install xgboost scikit-learn matplotlib pandas shap plotly
+
+#-------------------------------
+2. GB, XGB 파일을 실행 해서 -> 각 imgs 폴더에 이미지를 저장하고 -> 이미지들을 모아서 그래프를 완성합시다.
+실행 기본 키 : 해당 *.py 클릭 -> [Ctrl] + [Alt] + [N] 
+
+
+2-1. GBoost (Regression) 를 실행하면 dashboard_GB_imgs 폴더에 dashboard_stage_#.png 파일들이 생성됩니다.
+C:\..본인폴더경로..\XGBoost\01_xgboost_v1.py" + [Enter]
+
+
+2-2. XGBoost 를 실행하면 dashboard_XGB_imgs 폴더에 dashboard_stage_#.png 파일들이 생성됩니다.
+C:\..본인폴더경로..\XGBoost\01_XGBoost_v1.py" + [Enter]
+
+
+#-------------------------------
+3. 각 **_imgs 폴더에 생성된 **_stages_#.png 파일들을 하나로 묶어서 stage 변화에 따른 그래프를 출력합시다.
+
+3-1. GB 그래프
+C:\..본인폴더경로..\XGBoost\02_player_dashboard_GB
+
+3-2. XGB 그래프
+C:\..본인폴더경로..\XGBoost\02_player_dashboard_XGBoost
