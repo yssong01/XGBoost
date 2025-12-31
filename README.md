@@ -88,6 +88,8 @@
 
 ## 시뮬레이션 결과: [G1-S1] Expert-XGB 시각적 분석
 
+<img width="1980" height="1980" alt="G1_Orthogonality_Scenario1_Alcohol_Expert_XGB_Expert_stage_1000" src="https://github.com/user-attachments/assets/359caabc-2fbf-4e84-841d-f3c5a7d25d02" />
+
 ### 1️. Decision Topology Map (의사결정 지형도)
 
 ```
