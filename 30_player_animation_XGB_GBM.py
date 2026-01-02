@@ -218,6 +218,9 @@ class UltimateScenarioPlayer:
         folder_base = self.scenario_map.get(s_label, "")
         group_name = "_".join(folder_base.split('_')[:2])
         var_combination = s_label.split(':')[-1].strip().replace(' ', '').replace('/', '_')
+        # [수정 지점] 모델 이름 처리
+        # self.current_model이 'Expert_XGB'라면 그대로 사용되도록 보장
+        model_name = self.current_model
         return f"{group_name}_{s_num_str}_{var_combination}_{self.current_model}.{extension}"
 
     def save_as_gif(self, event):
