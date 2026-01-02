@@ -88,6 +88,9 @@
 
 ## 시뮬레이션 결과: [G1-S1] Expert-XGB 시각적 분석
 
+![G1_Orthogonality_S1_Alcohol-Flavanoids_Expert_XGB](https://github.com/user-attachments/assets/010b44f0-ecf1-44be-a8a2-b58da75ee565)
+
+
 ### 1️. Decision Topology Map (의사결정 지형도)
 
 ```
